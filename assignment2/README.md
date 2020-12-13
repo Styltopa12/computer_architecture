@@ -160,7 +160,7 @@ miss rates για το speclibm φαίνeται οτι με αύξηση του 
 1. Η L1 είναι πιο ακριβή ανα byte από την L2 μπορούμε να θεωρήσουμε οτι A = 5 C.
 2. Η L1 instruction cache είναι πιο ακριβής, και επομένως πιο φθηνή, σε σχέση με τη data cache.
    Αυτό οφείλεται στο οτι οι εντολές που χρησιμοποιούνται από τις cpus για προγράμματα στη συνήθη περίπτωση
-   είναι συγκεκριμένες (πχ load, condtional branch, compare, store κοκ)\*[1].
+   είναι συγκεκριμένες (πχ load, condtional branch, compare, store κοκ)\*[3].
    Αντίθετα, η data cache έχει υψηλότερα miss rates από την instruction cache. Αυτό γίνεται σαφές και από τις
    εκτελέσεις των benchmarks. Για κάθε εκτέλεση ανεξάρτητα των τιμών των παραμέτρων, βλέπουμε data miss rate > instruction miss rate.
 
@@ -188,13 +188,15 @@ func = K \* CPI
 ![](./graphs/step3/speclbm_cost.png)
 ![](./graphs/step3/specsjeng_cost.png)
 
-\*Σχόλιο: Στην εικόνα της παραπομπής (σελ.610) τα δεδομένα αφορούν στην x86 και όχι στην ARM αρχιτεκτονική.
+
+
+Πηγές         
+[1]https://en.wikipedia.org/wiki/Dynamic_frequency_scaling       
+[2]https://www.lirmm.fr/~sassate/ADAC/wp-content/uploads/2014/11/Accuracy_evaluation-ReCoSoC-2012.pdf        
+[3]Hennessy J. L., Patterson D. A.,Αρχιτεκτονική Υπολογιστών: Μία ποσοτική προσέγγιση (2020),6η έκδοση, (Γκιζόπουλος Δ., Καρανικολός Κ., Μετάφρ.),σελ.610-611._
+
+\*Σχόλιο: Στην εικόνα της παραπομπής [3] (σελ.610) τα δεδομένα αφορούν στην x86 και όχι στην ARM αρχιτεκτονική.
 Παρόλ' αυτά διευκρινίζεται στη συνέχεια οτι οι ίδιες εντολές αποτελούν τη συνήθη περίπτωση σε όλο το σύνολο
 των υπολογιστών ( εννοείται εμπορικής χρήσης καθώς σε επιστημονικές εφαρμογές η συνήθης περίπτωση χρησιμοποιούμενων
 εντολών είναι διαφορετική).
 
-Πηγές
-_[1]https://en.wikipedia.org/wiki/Dynamic_frequency_scaling 
-_[2]https://www.lirmm.fr/~sassate/ADAC/wp-content/uploads/2014/11/Accuracy_evaluation-
-ReCoSoC-2012.pdf
-_[3]Hennessy and Patterson,Αρχιτεκτονική Υπολογιστών,σελ.610-611._
