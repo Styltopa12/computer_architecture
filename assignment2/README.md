@@ -21,7 +21,7 @@
 | **Cache Line size** | 64 |
 
 Γενικά τα δεδομένα που κάνει output το [script](./gem5_outputs/get_data.sh) είναι στην μορφή
-`benchmark_clockSpeed_CacheLineSize_icacheSize_icacheAssoc_dcacheSize_dcacheAssoc_l2CacheSize_lwCacheAssoc`
+`benchmark_clockSpeed_CacheLineSize_icacheSize_icacheAssoc_dcacheSize_dcacheAssoc_l2CacheSize_l2CacheAssoc`
 Άρα τα default options είναι `2GHz_64_32kB_2_64kB_2_2MB_8`
 
 ### Ερώτημα 2
@@ -51,8 +51,8 @@ system είναι 1GHz και το `system.cpu_clk_domain = 500` δηλαδή τ
 ![](./graphs/step1/icache_miss_rate_1GHz_64_32kB_2_64kB_2_2MB_8.png)
 ![](./graphs/step1/dcache_miss_rate_1GHz_64_32kB_2_64kB_2_2MB_8.png)
 ![](./graphs/step1/l2_cache_miss_rate_1GHz_64_32kB_2_64kB_2_2MB_8.png)
-Παρατηρούμε ότι υπάρχει τέλειο scaling αφού μειώνοντας το clock στο μισό τα benchmarks χρειάστηκαν στον διπλάσιο χρόνο.
-Εκτός απο τα speclbm και specsjeng που λόγω των πολλών miss στην L2 cache υπάρχει καθυστέρηση ανεξάρτητη του clock.
+Παρατηρούμε ότι, με κάποια ανοχή δεδομένης της μη απόλυτης ακρίβειας του GEM5 κατα τις προσομοιώσεις, υπάρχει τέλειο scaling αφού μειώνοντας το clock στο μισό τα benchmarks χρειάστηκαν τον διπλάσιο χρόνο.
+Εκτός απο τα speclbm και specsjeng που λόγω των πολλών miss στην L2 cache υπάρχει καθυστέρηση ανεξάρτητη του clock.[1],[2]
 
 # Βήμα 2
 
@@ -194,4 +194,7 @@ func = K \* CPI
 εντολών είναι διαφορετική).
 
 Πηγές
-_[1] Hennessy and Patterson,Αρχιτεκτονική Υπολογιστών,σελ.610-611._
+_[1]https://en.wikipedia.org/wiki/Dynamic_frequency_scaling 
+_[2]https://www.lirmm.fr/~sassate/ADAC/wp-content/uploads/2014/11/Accuracy_evaluation-
+ReCoSoC-2012.pdf
+_[3]Hennessy and Patterson,Αρχιτεκτονική Υπολογιστών,σελ.610-611._
